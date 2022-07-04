@@ -24,9 +24,10 @@ def common_parts():
 
 
 def add_student():
-    frame_left.place_forget()
+    for widget in frame_left.winfo_children():
+        widget.place_forget()
     common_parts()
-    label_as = tkinter.Label(frame_left, text='ADD Student', font=('Lucida Console', '20', 'bold'))
+    label_as = tkinter.Label(frame_left, text='ADD Student', font=('Lucida Console', '25', 'bold'))
     label_as.place(x=300, y=362)
     messagebox.showinfo(message='Add Student func evoked')
 
@@ -34,7 +35,7 @@ def add_student():
 def add_attendance():
     frame_left.place_forget()
     common_parts()
-    label_aa = tkinter.Label(frame_left, text='Check-in', font=('Lucida Console', '20', 'bold'))
+    label_aa = tkinter.Label(frame_left, text='Check-in', font=('Lucida Console', '10', 'bold'))
     label_aa.place(x=300, y=362)
     messagebox.showinfo(message='attendance func evoked')
 
@@ -42,7 +43,7 @@ def add_attendance():
 def view_record():
     frame_left.place_forget()
     common_parts()
-    label_vr = tkinter.Label(frame_left, text='View', font=('Lucida Console', '20', 'bold'))
+    label_vr = tkinter.Label(frame_left, text='View', font=('Lucida Console', '15', 'bold'))
     label_vr.place(x=300, y=362)
     messagebox.showinfo(message='view function evoked')
 
@@ -50,7 +51,7 @@ def view_record():
 def update_record():
     frame_left.place_forget()
     common_parts()
-    label_ur = tkinter.Label(frame_left, text='Update', font=('Lucida Console', '20', 'bold'))
+    label_ur = tkinter.Label(frame_left, text='Update', font=('Lucida Console', '30', 'bold'))
     label_ur.place(x=300, y=362)
     messagebox.showinfo(message='update_record evoked')
 
@@ -58,7 +59,7 @@ def update_record():
 def delete_record():
     frame_left.place_forget()
     common_parts()
-    label_dr = tkinter.Label(frame_left, text='Delete', font=('Lucida Console', '20', 'bold'))
+    label_dr = tkinter.Label(frame_left, text='Delete', font=('Lucida Console', '5', 'bold'))
     label_dr.place(x=300, y=362)
     messagebox.showinfo(message='delete func evoked')
 
