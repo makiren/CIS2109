@@ -7,7 +7,6 @@ import pymysql as pymy
 # for the database design that is assumed on this project.
 
 
-
 # Start of element assignment of GUI
 root = tkinter.Tk()
 
