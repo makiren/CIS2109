@@ -11,6 +11,9 @@ import pymysql as pymy
 # common_parts() reassigns the common parts.
 
 
+# TODO change the way label displayed: text variable and no unique labels.
+
+
 def common_parts():
     frame_left = tkinter.Frame(root, bg='#9D2235', width="724", height="768")  # Temple Color
     frame_right = tkinter.Frame(root, bg='gray', width="300", height="768")
@@ -23,26 +26,13 @@ def common_parts():
     disp_image.place(anchor="n", x=362, y=0)
 
 
-def clear_left_frame():
-    for widgets in frame_left.winfo_children():
-        widgets.place_forget()
-        # widgets.destroy()
-
-
-def add_student():
-    frame_left.place_forget()
-    clear_left_frame()
-    common_parts()
-    label_as = tkinter.Label(frame_left, text='ADD Student', font=('Lucida Console', '25', 'bold'))
-    label_as.place(x=300, y=362)
-    messagebox.showinfo(message='Add Student func evoked')
-
-
 def add_attendance():
     frame_left.place_forget()
     common_parts()
-    label_aa = tkinter.Label(frame_left, text='Check-in', font=('Lucida Console', '10', 'bold'))
-    label_aa.place(x=300, y=362)
+    text = 'Tkinter suck but gotta still try/n'
+    label.config(text=text)
+    # label_aa = tkinter.Label(frame_left, text='Check-in', font=('Lucida Console', '10', 'bold'))
+    # label_aa.place(x=300, y=362)
     messagebox.showinfo(message='attendance func evoked')
 
 
@@ -83,6 +73,10 @@ frame_right = tkinter.Frame(root, bg='gray', width="300", height="768")
 frame_right.pack(side="right")
 frame_left.pack(side="left")
 
+text = 'This is text variable'
+label = tkinter.Label(frame_left, text=text)
+
+
 # TU Logo
 tu_image = tkinter.PhotoImage(file='temple-logo-t-box.png')
 disp_image = tkinter.Label(frame_left, image=tu_image)
@@ -92,6 +86,18 @@ welcome = tkinter.Label(frame_left, text='Welcome to TUJ Student Repository',
                         justify='center', fg='white', bg='black',
                         anchor='center', font=("Lucida Console", "20", "bold"))
 welcome.place(relx=0.25, rely=0.16)
+
+def add_student():
+    frame_left.place_forget()
+    # clear_left_frame()
+    common_parts()
+    text = 'This is modified text'
+    label.config(text=text)
+    label.place(relx=0.5, rely=0.5)
+
+    # label_as = tkinter.Label(frame_left, text='ADD Student', font=('Lucida Console', '25', 'bold'))
+    # label_as.place(x=300, y=362)
+    messagebox.showinfo(message='Add Student func evoked')
 
 # Making all the labels in GUI (NOT PLACING!)
 # Left Elements
