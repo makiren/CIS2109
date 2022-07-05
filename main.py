@@ -12,7 +12,7 @@ root = tkinter.Tk()
 
 root.title("TUJ Student Repository")
 root.geometry('1024x768')
-
+global frame_left, frame_right
 frame_left = tkinter.Frame(root, bg='#9D2235', width="724", height="768") # Temple Color
 frame_right = tkinter.Frame(root, bg='gray', width="300", height="768")
 frame_right.pack(side="right")
@@ -43,19 +43,20 @@ welcome.place(anchor='n', x=362, rely=0.16)
 
 
 def common_parts():
-    frame_left = tkinter.Frame(root, bg='#9D2235', width="724", height="768")  # Temple Color
-    frame_right = tkinter.Frame(root, bg='gray', width="300", height="768")
-    frame_right.pack(side="right")
-    frame_left.pack(side="left")
+    # frame_left = tkinter.Frame(root, bg='#9D2235', width="724", height="768")  # Temple Color
+    # frame_right = tkinter.Frame(root, bg='gray', width="300", height="768")
+    # frame_right.pack(side="right")
+    # frame_left.pack(side="left")
 
     # TU Logo
     tu_image = tkinter.PhotoImage(file='temple-logo-t-box.png')
     disp_image = tkinter.Label(frame_left, image=tu_image)
-    disp_image.place(anchor="n", x=362, y=0)
+    disp_image.place(anchor="n", x=362, y=1)
 
 
 def add_student():
-    frame_left.place_forget()
+    for widget in frame_left.winfo_children():
+        widget.place_forget()
     # clear_left_frame()
     common_parts()
     text = 'This is add_student function'
@@ -68,22 +69,25 @@ def add_student():
 
 
 def add_attendance():
-    frame_left.place_forget()
-    common_parts()
+    for widget in frame_left.winfo_children():
+        widget.place_forget()
     text = "Please check-in to today's class"
     label_head.config(text=text)
     label_head.place(anchor='n', x=362, rely=0.20)
+    common_parts()
     # Depreciated
     # label_aa = tkinter.Label(frame_left, text='Check-in', font=('Lucida Console', '10', 'bold'))
     # label_aa.place(x=300, y=362)
 
 
 def view_record():
-    frame_left.place_forget()
+    for widget in frame_left.winfo_children():
+        widget.place_forget()
     common_parts()
     text = "This is view_record function"
     label_head.config(text=text)
     label_head.place(anchor='n', x=362, rely=0.20)
+    label_name.place(relx=0.8, rely=0.5, anchor='center')
 
     # Depreciated
     # label_vr = tkinter.Label(frame_left, text='View', font=('Lucida Console', '15', 'bold'))
@@ -91,7 +95,8 @@ def view_record():
 
 
 def update_record():
-    frame_left.place_forget()
+    for widget in frame_left.winfo_children():
+        widget.place_forget()
     common_parts()
     text = 'This is update_record function'
     label_head.config(text=text)
@@ -102,9 +107,9 @@ def update_record():
     # label_ur.place(x=300, y=362)
 
 
-
 def delete_record():
-    frame_left.place_forget()
+    for widget in frame_left.winfo_children():
+        widget.place_forget()
     common_parts()
     text = 'This is delete_record function'
     label_head.config(text=text)
@@ -117,6 +122,7 @@ def delete_record():
 
 # Making all the labels in GUI (NOT PLACING!)
 # Left Elements
+# global label_name
 label_name = tkinter.Label(frame_left, text='Full Name ("John Doe")')
 label_id = tkinter.Label(frame_left, text='TUID')
 
@@ -152,10 +158,6 @@ button_delete.place(relx=0.13, rely=0.53, relwidth=0.8)
 button_clear = tkinter.Button(frame_right,
                               text='Exit', fg='black', command=root.quit)
 button_clear.place(relx=0.13, rely=0.6, relwidth=0.8)
-
-
-
-
 
 
 # End of element assignment of GUI
