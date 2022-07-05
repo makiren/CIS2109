@@ -23,9 +23,15 @@ def common_parts():
     disp_image.place(anchor="n", x=362, y=0)
 
 
+def clear_left_frame():
+    for widgets in frame_left.winfo_children():
+        widgets.place_forget()
+        # widgets.destroy()
+
+
 def add_student():
-    for widget in frame_left.winfo_children():
-        widget.place_forget()
+    frame_left.place_forget()
+    clear_left_frame()
     common_parts()
     label_as = tkinter.Label(frame_left, text='ADD Student', font=('Lucida Console', '25', 'bold'))
     label_as.place(x=300, y=362)
@@ -62,7 +68,6 @@ def delete_record():
     label_dr = tkinter.Label(frame_left, text='Delete', font=('Lucida Console', '5', 'bold'))
     label_dr.place(x=300, y=362)
     messagebox.showinfo(message='delete func evoked')
-
 
 # -----   Functions End
 
