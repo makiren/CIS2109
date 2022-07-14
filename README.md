@@ -22,13 +22,13 @@ Course-> Student-> Enrollment -> Semester-> Attendance.
 
 Following Student List and Course Lists get inserted with sql scripts:  
   
-**Student List** (Table Student)
+**Student List** (Table Student)  
 tuk40001 | John Doe  
 tuk40005 | Jane Doe  
 tuk40010 | Owl Hooter  
 tuk40015 | Master Yoda  
   
-**Course List** (Table Course)
+**Course List** (Table Course)  
 CIS0835 | Cyberspace & Society  
 CIS1051 | Introduction to Problem Solving and Programming in Python  
 CIS1057 | Computer Programming in C  
